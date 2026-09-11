@@ -1,0 +1,51 @@
+# Limitations and Assumptions
+
+This project is a portfolio piece built to demonstrate operational control concepts, not a
+production system. This document is an honest account of where it simplifies reality, so that
+anyone reviewing it — including in an interview — understands exactly what it does and doesn't
+represent.
+
+## Data
+
+- **All data is synthetic.** Every instrument, price, corporate action, event, and settlement
+  record was generated programmatically with a fixed random seed. No real customer, employer, or
+  proprietary data was used at any point.
+- **Data volumes are small by design.** 7 instruments, 42 prices, 5 corporate actions, and a
+  handful of events/settlements — enough to exercise every control rule at least once, but far
+  below the scale of a real broker's daily data volumes.
+- **Data quality issues were deliberately embedded**, not naturally occurring. This means the
+  detection rate on this dataset is not representative of real-world exception rates; it was
+  designed so the controls would have something concrete to catch and demonstrate.
+
+## SLA and Business Logic
+
+- **The settlement SLA (2 days past expected settlement) is a simplified placeholder.** Real
+  settlement SLAs vary by market, instrument type, and settlement cycle (e.g. T+1, T+2) and would
+  need to be configured per instrument/market in a production system, not hardcoded as a single
+  threshold.
+- **Reconciliation matching is done on instrument + event type**, a simplified key. A production
+  system would need more robust matching logic (e.g. handling partial matches, multiple events of
+  the same type on the same day, corrections/amendments).
+- **Severity and owner-team assignment are static, rule-based mappings.** A real system would
+  likely route based on additional context (e.g. transaction size, customer impact) and would
+  integrate with an actual ticketing/workflow system rather than a CSV.
+
+## Technology
+
+- **SQLite, not a production database.** Chosen for portability and simplicity in a demonstration
+  project. A production deployment would use a proper RDBMS or data warehouse, with connection
+  pooling, access controls, and backup/recovery — none of which are needed or implemented here.
+- **No automation or scheduling yet.** Currently, every control script is run manually. A
+  production system would run on a schedule (e.g. via GitHub Actions, Airflow, or a dedicated
+  scheduler) and alert on failures, not just log them.
+- **No user interface.** Exceptions and KPIs are currently CSV outputs, reviewed manually. A
+  production system would likely have a dashboard or integrate with existing operational tooling.
+
+## What a Production System Would Add
+
+- Real-time or near-real-time processing rather than batch runs
+- Configurable, market-specific SLA and business rules rather than hardcoded thresholds
+- Integration with an actual case-management/ticketing system for exception workflow
+- Proper access controls, audit logging, and data retention policies
+- Monitoring and alerting on control run failures themselves (not just the exceptions they find)
+- Scale-tested performance across realistic daily data volumes
