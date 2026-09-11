@@ -1,0 +1,5 @@
+settlement_id,trade_reference,instrument_id,trade_date,expected_settlement_date,actual_settlement_date,settlement_status,quantity,currency,counterparty,loaded_at
+SET001,TR1001,INS001,2026-09-08,2026-09-10,2026-09-10,Settled,100,EUR,CP-A,2026-09-10T00:00:00
+SET002,TR1002,INS003,2026-09-01,2026-09-03,,Pending,50,USD,CP-B,2026-09-10T00:00:00
+SET003,TR1003,INS004,2026-09-09,2026-09-11,,Failed,30,USD,CP-C,2026-09-10T00:00:00
+SET004,,INS002,2026-09-07,2026-09-09,2026-09-09,Settled,20,EUR,CP-A,2026-09-10T00:00:00

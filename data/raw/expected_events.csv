@@ -1,0 +1,5 @@
+expected_event_id,action_id,instrument_id,expected_event_type,expected_processing_date,expected_status,owner_team,priority
+EXP001,CA001,INS001,Dividend Entitlement Calculation,2026-08-30,Completed,Trading Operations,High
+EXP002,CA002,INS003,Stock Split Adjustment,2026-07-22,Completed,Trading Operations,High
+EXP003,CA003,INS004,Dividend Entitlement Calculation,2026-09-05,Completed,Trading Operations,Medium
+EXP004,CA005,INS002,Dividend Entitlement Calculation,2026-08-15,Completed,Trading Operations,High

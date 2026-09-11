@@ -1,0 +1,2 @@
+run_date,total_records_checked,total_exceptions_found,data_quality_score,exception_rate_pct,critical_open_exceptions,high_open_exceptions,event_completeness_rate_pct,sla_breach_rate_pct,settlement_pending_rate_pct
+2026-09-11,71,20,71.83,28.17,4,12,80.0,40.0,25.0

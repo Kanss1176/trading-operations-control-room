@@ -1,0 +1,6 @@
+action_id,instrument_id,action_type,announcement_date,ex_date,record_date,payable_date,currency,amount,status,source,loaded_at
+CA001,INS001,Dividend,2026-08-01,2026-08-15,2026-08-16,2026-08-30,EUR,2.5,Confirmed,Corporate Actions Feed,2026-09-10T00:00:00
+CA002,INS003,Stock Split,2026-07-01,2026-07-20,2026-07-21,2026-07-22,USD,2.0,Confirmed,Corporate Actions Feed,2026-09-10T00:00:00
+CA003,INS004,Dividend,2026-08-10,2026-08-25,2026-08-26,2026-09-05,USD,0.75,Confirmed,Corporate Actions Feed,2026-09-10T00:00:00
+CA004,INS001,Dividend,2026-08-01,2026-08-15,2026-08-16,2026-08-30,EUR,2.5,Confirmed,Corporate Actions Feed,2026-09-10T00:00:00
+CA005,INS002,Dividend,2026-08-05,2026-09-01,2026-08-20,2026-08-15,EUR,,Announced,Corporate Actions Feed,2026-09-10T00:00:00

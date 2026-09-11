@@ -1,0 +1,5 @@
+event_id,action_id,instrument_id,event_type,processed_date,processed_status,processed_amount,owner_team,source_system,loaded_at
+EVT001,CA001,INS001,Dividend Entitlement Calculation,2026-08-30,Completed,2.5,Trading Operations,Ops Platform,2026-09-10T00:00:00
+EVT002,CA002,INS003,Stock Split Adjustment,2026-07-25,Completed,2.0,Trading Operations,Ops Platform,2026-09-10T00:00:00
+EVT003,CA003,INS004,Dividend Entitlement Calculation,2026-09-05,Completed,0.5,Trading Operations,Ops Platform,2026-09-10T00:00:00
+EVT004,CA001,INS001,Dividend Entitlement Calculation,2026-08-30,Completed,2.5,Trading Operations,Ops Platform,2026-09-10T00:00:00

@@ -1,0 +1,17 @@
+exception_type,count
+Duplicate ISIN,2
+Duplicate processed event,2
+Missing market price,2
+Potential duplicate corporate action,2
+Invalid asset class,1
+Invalid corporate action date sequence,1
+Amount mismatch,1
+Failed settlement,1
+Invalid dividend amount,1
+Invalid currency,1
+Invalid market price,1
+Late event processing,1
+Missing instrument ID,1
+Missing expected event,1
+Settlement SLA breach,1
+Unknown instrument reference,1
