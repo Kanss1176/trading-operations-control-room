@@ -1,0 +1,39 @@
+name: Daily Data Quality Validation
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # runs every day at 06:00 UTC
+  workflow_dispatch:        # allows manual trigger from the GitHub Actions tab
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pandas numpy sqlalchemy openpyxl matplotlib seaborn
+
+      - name: Rebuild database from source CSVs
+        run: python src/create_database.py
+
+      - name: Run data quality validation
+        run: python src/validate_data.py
+
+      - name: Run reconciliation checks
+        run: python src/run_reconciliation.py
+
+      - name: Commit updated database and results
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add database/trading_ops.db data/processed/
+          git commit -m "chore: automated daily control run [skip ci]" || echo "No changes to commit"
+          git push
