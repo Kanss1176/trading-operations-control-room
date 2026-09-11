@@ -110,6 +110,7 @@ CREATE TABLE data_quality_exceptions (
 CREATE TABLE control_run_log (
     control_run_id TEXT,
     run_timestamp TEXT,
+    trigger_type TEXT,
     records_checked INTEGER,
     exceptions_found INTEGER,
     data_quality_score REAL,

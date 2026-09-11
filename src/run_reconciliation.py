@@ -185,6 +185,7 @@ def main():
         control_log = pd.DataFrame([{
             "control_run_id": CONTROL_RUN_ID,
             "run_timestamp": RUN_TIMESTAMP,
+            "trigger_type": "EVENT_DRIVEN",
             "records_checked": records_checked,
             "exceptions_found": exceptions_found,
             "data_quality_score": max(0, round(100 - (exceptions_found / max(records_checked, 1) * 100), 2)),

@@ -11,6 +11,7 @@ from datetime import datetime
 import sqlite3
 import uuid
 import pandas as pd
+import os
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 DB_PATH = BASE_DIR / "database" / "trading_ops.db"
@@ -216,6 +217,7 @@ def main():
         control_log = pd.DataFrame([{
             "control_run_id": CONTROL_RUN_ID,
             "run_timestamp": RUN_TIMESTAMP,
+            "trigger_type": os.environ.get("TRIGGER_TYPE", "DAILY"),
             "records_checked": records_checked,
             "exceptions_found": exceptions_found,
             "data_quality_score": data_quality_score,
